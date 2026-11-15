@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="description" content="Il tuo allenatore personale per il triathlon 2027">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>TRIATHLON COACH 2027</title>
+<style>
+:root{color-scheme:dark;--bg:#08111f;--panel:#111e30;--panel2:#17263b;--muted:#91a4bb;--text:#f4f7fb;--cyan:#39d5e6;--lime:#b7f36b;--orange:#ffad5c}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0%,#17324a 0,transparent 35%),var(--bg);color:var(--text);font:16px system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:26px 20px 18px;max-width:760px;margin:auto}
+.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:2px}
+h1{font-size:27px;line-height:1.1;margin:8px 0 5px;letter-spacing:.3px}
+.sub{color:var(--muted);font-size:14px}
+main{max-width:760px;margin:auto;padding:0 16px 40px}
+.hero{background:linear-gradient(135deg,#17354a,#13243a 60%,#1d3042);border:1px solid #2c4b62;border-radius:22px;padding:18px;margin:8px 0 18px}
+.hero-top{display:flex;justify-content:space-between;align-items:center}.pill{font-size:11px;color:var(--lime);border:1px solid #5b783d;padding:5px 9px;border-radius:30px;font-weight:700}
+.hero h2{font-size:20px;margin:16px 0 5px}.hero p{color:#c0cfdd;margin:0;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.stat{background:#0d1a2a99;padding:12px;border-radius:14px}.stat b{display:block;font-size:20px}.stat span{font-size:11px;color:var(--muted)}
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:23px 2px 11px}
+h3{font-size:16px;margin:0}.hint{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tile{background:var(--panel);border:1px solid #20334b;border-radius:17px;padding:15px;min-height:105px}
+.tile .emoji{font-size:24px}.tile strong{display:block;margin-top:8px}.tile small{color:var(--muted)}
+.day{background:var(--panel);border:1px solid #20334b;border-radius:16px;padding:14px;margin-bottom:9px;display:grid;grid-template-columns:62px 1fr auto;gap:10px;align-items:center}
+.day .dow{font-weight:800;color:var(--cyan)}.day strong{font-size:14px}.day small{display:block;color:var(--muted);margin-top:3px}.tag{font-size:11px;background:var(--panel2);padding:6px 8px;border-radius:9px;color:#d8e6f4}
+.actions{display:flex;gap:9px;margin-top:12px}.btn{border:0;border-radius:12px;padding:12px 14px;font-weight:800;background:var(--cyan);color:#06121b;flex:1}.btn.secondary{background:#22354c;color:var(--text);border:1px solid #344b64}
+.progress{height:9px;background:#24364c;border-radius:20px;overflow:hidden;margin:12px 0 5px}.progress i{display:block;width:0%;height:100%;background:linear-gradient(90deg,var(--cyan),var(--lime));border-radius:20px}
+textarea,input{width:100%;background:#0b1727;color:var(--text);border:1px solid #31465e;border-radius:12px;padding:12px;font:inherit}
+textarea{min-height:90px;resize:vertical}.note{background:var(--panel);border:1px solid #20334b;border-radius:16px;padding:15px;margin-top:12px}
+footer{text-align:center;color:#667d96;font-size:11px;padding:20px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<header>
+ <div class="eyebrow">IL TUO PERCORSO · 2027</div>
+ <h1>TRIATHLON COACH <span style="color:var(--cyan)">2027</span></h1>
+ <div class="sub">Allenati con metodo. Arriva pronto al traguardo.</div>
+</header>
+<main>
+ <section class="hero">
+  <div class="hero-top"><span class="eyebrow">DASHBOARD ATLETA</span><span class="pill">OBIETTIVO 2027</span></div>
+  <h2>Un allenamento alla volta.</h2>
+  <p>Una base semplice per organizzare nuoto, bici, corsa e recupero. Personalizza le sedute in base alle tue giornate.</p>
+  <div class="stats">
+   <div class="stat"><b id="done">0</b><span>SEDUTE COMPLETATE</span></div>
+   <div class="stat"><b>3</b><span>DISCIPLINE</span></div>
+   <div class="stat"><b>2027</b><span>IL TUO ANNO</span></div>
+  </div>
+ </section>
+ <div class="section-title"><h3>Le discipline</h3><span class="hint">La tua settimana</span></div>
+ <section class="grid">
+  <div class="tile"><span class="emoji">🏊</span><strong>Nuoto</strong><small>Tecnica · fondo · ritmo</small></div>
+  <div class="tile"><span class="emoji">🚴</span><strong>Ciclismo</strong><small>Resistenza · agilità</small></div>
+  <div class="tile"><span class="emoji">🏃</span><strong>Corsa</strong><small>Fondo · progressione</small></div>
+  <div class="tile"><span class="emoji">💪</span><strong>Core</strong><small>Stabilità · mobilità</small></div>
+ </section>
+ <div class="section-title"><h3>Programma settimanale</h3><span class="hint">Bozza modificabile</span></div>
+ <section id="week">
+  <div class="day"><div class="dow">LUN</div><div><strong>Nuoto + core leggero</strong><small>Compatibile con lavoro 08:00–14:00</small></div><span class="tag">🏊 💪</span></div>
+  <div class="day"><div class="dow">MAR</div><div><strong>Recupero / mobilità</strong><small>Giornata di lavoro lunga</small></div><span class="tag">🧘</span></div>
+  <div class="day"><div class="dow">MER</div><div><strong>Corsa facile</strong><small>Ritmo tranquillo, senza forzare</small></div><span class="tag">🏃</span></div>
+  <div class="day"><div class="dow">GIO</div><div><strong>Riposo</strong><small>Giornata di lavoro lunga</small></div><span class="tag">⏸️</span></div>
+  <div class="day"><div class="dow">VEN</div><div><strong>Nuoto</strong><small>Sessione tecnica o fondo</small></div><span class="tag">🏊</span></div>
+  <div class="day"><div class="dow">SAB</div><div><strong>Bici endurance</strong><small>Uscita progressiva, senza gara</small></div><span class="tag">🚴</span></div>
+  <div class="day"><div class="dow">DOM</div><div><strong>Corsa breve o recupero</strong><small>In base a stanchezza e recupero</small></div><span class="tag">🏃</span></div>
+ </section>
+ <div class="section-title"><h3>Segna i tuoi progressi</h3><span class="hint">Salvati su questo dispositivo</span></div>
+ <div class="note">
+  <strong>Allenamenti completati questa settimana</strong>
+  <div class="progress"><i id="bar"></i></div>
+  <div class="hint" id="progressText">0 su 7 sedute segnate</div>
+  <div class="actions"><button class="btn" id="plus">+ Segna allenamento</button><button class="btn secondary" id="reset">Azzera</button></div>
+ </div>
+ <div class="note">
+  <strong>Appunti dell'atleta</strong>
+  <p class="hint">Scrivi sensazioni, tempi o note. Si salvano automaticamente sul telefono.</p>
+  <textarea id="notes" placeholder="Es. Nuoto 1.500 m, sensazioni buone..."></textarea>
+ </div>
+ <footer>TRIATHLON COACH 2027 · Versione iniziale personalizzabile</footer>
+</main>
+<script>
+const key='tc27';
+let state=JSON.parse(localStorage.getItem(key)||'{"done":0,"notes":""}');
+const done=document.getElementById('done'),bar=document.getElementById('bar'),pt=document.getElementById('progressText');
+function render(){state.done=Math.max(0,Math.min(7,state.done));done.textContent=state.done;bar.style.width=(state.done/7*100)+'%';pt.textContent=state.done+' su 7 sedute segnate';document.getElementById('notes').value=state.notes;localStorage.setItem(key,JSON.stringify(state))}
+document.getElementById('plus').onclick=()=>{state.done++;render()};
+document.getElementById('reset').onclick=()=>{state.done=0;render()};
+document.getElementById('notes').oninput=e=>{state.notes=e.target.value;localStorage.setItem(key,JSON.stringify(state))};
+render();
+if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body></html>
